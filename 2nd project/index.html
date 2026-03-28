@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOIR — Premium Coffee Experience</title>
+  <meta name="description" content="NOIR is a premium coffee brand offering an immersive, cinematic coffee experience. Discover our curated blends, book a table, and elevate your ritual." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo">NOIR</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">Story</a></li>
+        <li><a href="#services" class="nav-link">Offerings</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#booking" class="nav-link">Reserve</a></li>
+      </ul>
+      <button class="nav-cta" id="nav-cta-btn" onclick="openModal()">Book a Table</button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#about" onclick="closeMobileNav()">Story</a></li>
+      <li><a href="#services" onclick="closeMobileNav()">Offerings</a></li>
+      <li><a href="#menu" onclick="closeMobileNav()">Menu</a></li>
+      <li><a href="#booking" onclick="closeMobileNav()">Reserve</a></li>
+      <li><button onclick="openModal(); closeMobileNav()">Book a Table</button></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline class="hero-video" id="hero-video">
+        <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-text" id="hero-eyebrow">Est. 2019 · Premium Coffee House</p>
+      <h1 class="hero-title" id="hero-title">
+        <span class="reveal-text">The Art of</span><br />
+        <em class="hero-title-em reveal-text">Dark Ritual</em>
+      </h1>
+      <p class="hero-sub reveal-text" id="hero-sub">Where every cup tells a story brewed from origin.</p>
+
+      <!-- AI Search Bar -->
+      <div class="hero-search-wrap reveal-text" id="hero-search-wrap">
+        <div class="hero-search">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="hero-search-input" class="hero-search-input" placeholder="" aria-label="Search blends or ask anything" />
+          <span class="search-typewriter" id="search-typewriter"></span>
+          <button class="search-btn" id="search-btn" aria-label="Search">Explore</button>
+        </div>
+        <p class="search-hint">Try: "single origin Ethiopia" · "strongest espresso" · "vegan options"</p>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" id="hero-scroll">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT / STORY
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="about section-pad">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap scroll-reveal">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Premium coffee being brewed" class="about-img" loading="lazy" />
+            <div class="about-img-badge">
+              <span class="badge-num">12+</span>
+              <span class="badge-label">Origin regions</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text scroll-reveal" data-delay="150">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">Coffee is not<br /><em>a drink. It's a mood.</em></h2>
+          <p class="section-body">NOIR was born from a single obsession: the perfect cup. We source micro-lot beans from twelve regions worldwide, roasted in-house on vintage cast-iron drums that have aged as beautifully as our craft.</p>
+          <p class="section-body">Every pour is intentional. Every blend is a chapter. We invite you into the ritual.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="48">0</span>
+              <span class="stat-label">Unique blends</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="12">0</span>
+              <span class="stat-label">Countries sourced</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="7">0</span>
+              <span class="stat-label">Years of mastery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES / OFFERINGS
+  ═══════════════════════════════════════════ -->
+  <section id="services" class="services section-pad">
+    <div class="container">
+      <div class="section-head scroll-reveal">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Crafted for the<br /><em>discerning palate</em></h2>
+      </div>
+      <div class="services-grid">
+        <div class="glass-card scroll-reveal" data-delay="0">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M24 4v4M24 40v4M4 24h4M40 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card-title">Single Origin</h3>
+          <p class="card-body">Traceable micro-lot beans from Ethiopia, Colombia, and Japan. Unadulterated terroir in every cup.</p>
+          <a href="#menu" class="card-link">Explore →</a>
+        </div>
+        <div class="glass-card scroll-reveal" data-delay="100">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5"/><path d="M16 36s0-8 8-8 8 8 8 8" stroke="currentColor" stroke-width="1.5"/><path d="M24 20V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card-title">Espresso Bar</h3>
+          <p class="card-body">Our La Marzocco machines pull shots to 9-bar precision. Expect the loudest silence between sips.</p>
+          <a href="#menu" class="card-link">Explore →</a>
+        </div>
+        <div class="glass-card scroll-reveal" data-delay="200">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="12" y="16" width="24" height="20" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M36 22h4a2 2 0 0 1 0 4h-4" stroke="currentColor" stroke-width="1.5"/><path d="M20 16v-4a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="card-title">Private Events</h3>
+          <p class="card-body">Host intimate gatherings in our curated private lounge. Catering, curation, and ceremony — handled.</p>
+          <a href="#booking" class="card-link">Reserve →</a>
+        </div>
+        <div class="glass-card scroll-reveal" data-delay="300">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l4 14h14l-11 8 4 14-11-8-11 8 4-14-11-8h14z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card-title">Masterclasses</h3>
+          <p class="card-body">Learn to pull the perfect shot, understand cupping, and brew with intention. Sessions every Saturday.</p>
+          <a href="#booking" class="card-link">Join →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MENU
+  ═══════════════════════════════════════════ -->
+  <section id="menu" class="menu-section section-pad">
+    <div class="container">
+      <div class="section-head scroll-reveal">
+        <span class="section-tag">Featured Menu</span>
+        <h2 class="section-title">Selected for<br /><em>the ritual</em></h2>
+      </div>
+      <div class="menu-filter scroll-reveal">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+        <button class="filter-btn" data-filter="espresso" id="filter-espresso">Espresso</button>
+        <button class="filter-btn" data-filter="cold" id="filter-cold">Cold Brew</button>
+        <button class="filter-btn" data-filter="specialty" id="filter-specialty">Specialty</button>
+      </div>
+      <div class="menu-grid" id="menu-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BOOKING CTA
+  ═══════════════════════════════════════════ -->
+  <section id="booking" class="booking-section section-pad">
+    <div class="booking-bg-glow"></div>
+    <div class="container">
+      <div class="booking-inner scroll-reveal">
+        <span class="section-tag">Reserve Your Seat</span>
+        <h2 class="section-title booking-title">An evening unlike<br /><em>any other awaits</em></h2>
+        <p class="booking-sub">Tables are limited. Moments are priceless. Secure your ritual now.</p>
+        <button class="booking-btn" id="booking-cta-btn" onclick="openModal()">
+          <span>Reserve a Table</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">NOIR</span>
+          <p class="footer-tagline">The Art of Dark Ritual</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok" class="social-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.19a8.16 8.16 0 0 0 4.77 1.52V6.26a4.85 4.85 0 0 1-1-.57z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Visit</h4>
+          <p>42 Obsidian Lane<br />New Delhi, India 110001</p>
+          <p>Mon–Sun · 7:00 AM – 11:00 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <p><a href="mailto:hello@noircoffee.com">hello@noircoffee.com</a></p>
+          <p><a href="tel:+911234567890">+91 12345 67890</a></p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#services">Offerings</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#booking">Reserve</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOIR Coffee. All rights reserved.</p>
+        <p>Crafted with obsession.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       BOOKING MODAL (3-Step)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
+    <div class="modal" id="booking-modal" role="dialog" aria-modal="true" aria-label="Book a table">
+      <button class="modal-close" id="modal-close-btn" onclick="closeModal()" aria-label="Close">✕</button>
+
+      <!-- Progress Bar -->
+      <div class="modal-progress" id="modal-progress">
+        <div class="progress-step active" id="step-dot-1">
+          <span class="step-dot"></span>
+          <span class="step-label">Date</span>
+        </div>
+        <div class="progress-line" id="progress-line-1"></div>
+        <div class="progress-step" id="step-dot-2">
+          <span class="step-dot"></span>
+          <span class="step-label">Time</span>
+        </div>
+        <div class="progress-line" id="progress-line-2"></div>
+        <div class="progress-step" id="step-dot-3">
+          <span class="step-dot"></span>
+          <span class="step-label">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Date & Guests -->
+      <div class="modal-step" id="modal-step-1">
+        <h3 class="modal-title">Choose Your Date</h3>
+        <p class="modal-sub">Select a date and number of guests for your visit.</p>
+        <div class="form-group">
+          <label for="booking-date">Date</label>
+          <input type="date" id="booking-date" class="form-input" min="" />
+        </div>
+        <div class="form-group">
+          <label for="booking-guests">Guests</label>
+          <div class="guest-counter" id="guest-counter">
+            <button type="button" class="guest-btn" id="guest-minus" onclick="changeGuests(-1)">−</button>
+            <span class="guest-count" id="guest-count">2</span>
+            <button type="button" class="guest-btn" id="guest-plus" onclick="changeGuests(1)">+</button>
+          </div>
+        </div>
+        <button class="modal-btn" id="step1-next" onclick="goToStep(2)">Next →</button>
+      </div>
+
+      <!-- Step 2: Time Slot -->
+      <div class="modal-step hidden" id="modal-step-2">
+        <h3 class="modal-title">Select a Time Slot</h3>
+        <p class="modal-sub">Available slots for your chosen date.</p>
+        <div class="time-slots" id="time-slots">
+          <button class="time-slot" data-time="7:00 AM" onclick="selectTime(this)">7:00 AM</button>
+          <button class="time-slot" data-time="8:30 AM" onclick="selectTime(this)">8:30 AM</button>
+          <button class="time-slot" data-time="10:00 AM" onclick="selectTime(this)">10:00 AM</button>
+          <button class="time-slot" data-time="12:00 PM" onclick="selectTime(this)">12:00 PM</button>
+          <button class="time-slot" data-time="1:30 PM" onclick="selectTime(this)">1:30 PM</button>
+          <button class="time-slot" data-time="3:00 PM" onclick="selectTime(this)">3:00 PM</button>
+          <button class="time-slot" data-time="5:00 PM" onclick="selectTime(this)">5:00 PM</button>
+          <button class="time-slot" data-time="7:00 PM" onclick="selectTime(this)">7:00 PM</button>
+          <button class="time-slot" data-time="8:30 PM" onclick="selectTime(this)">8:30 PM</button>
+          <button class="time-slot" data-time="10:00 PM" onclick="selectTime(this)">10:00 PM</button>
+        </div>
+        <div class="modal-nav">
+          <button class="modal-btn modal-btn-ghost" onclick="goToStep(1)">← Back</button>
+          <button class="modal-btn" id="step2-next" onclick="goToStep(3)" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirm -->
+      <div class="modal-step hidden" id="modal-step-3">
+        <div class="confirm-icon" id="confirm-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/><path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="modal-title">Confirm Reservation</h3>
+        <div class="confirm-summary" id="confirm-summary">
+          <div class="summary-row"><span>Date</span><span id="sum-date">—</span></div>
+          <div class="summary-row"><span>Time</span><span id="sum-time">—</span></div>
+          <div class="summary-row"><span>Guests</span><span id="sum-guests">—</span></div>
+        </div>
+        <div class="form-group">
+          <label for="booking-name">Your Name</label>
+          <input type="text" id="booking-name" class="form-input" placeholder="Jane Doe" />
+        </div>
+        <div class="form-group">
+          <label for="booking-email">Email</label>
+          <input type="email" id="booking-email" class="form-input" placeholder="jane@example.com" />
+        </div>
+        <div class="modal-nav">
+          <button class="modal-btn modal-btn-ghost" onclick="goToStep(2)">← Back</button>
+          <button class="modal-btn" id="confirm-btn" onclick="confirmBooking()">Confirm Reservation</button>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="modal-step hidden" id="modal-success">
+        <div class="success-animation" id="success-animation">
+          <div class="success-ring"></div>
+          <svg viewBox="0 0 48 48" fill="none" class="success-check"><path d="M14 24l8 8 14-16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="modal-title">Reservation Confirmed!</h3>
+        <p class="modal-sub" id="success-message">Your table has been reserved. A confirmation will be sent to your email.</p>
+        <button class="modal-btn" onclick="closeModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
